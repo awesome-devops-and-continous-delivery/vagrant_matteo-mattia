@@ -45,19 +45,19 @@ Vagrant.configure("2") do |config|
   # argument is a set of non-required options.
   config.vm.synced_folder ".", "/usr/share/nginx/html"
 
-  config.vm.provision "shell", inline: "sudo apt-get update; sudo apt install nginx"
+  config.vm.provision "shell", inline: "sudo apt-get update; apt install -yq nginx"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
   # Example for VirtualBox:
   #
-  # config.vm.provider "virtualbox" do |vb|
+  config.vm.provider "virtualbox" do |vb|
   #   # Display the VirtualBox GUI when booting the machine
-  #   vb.gui = true
+     vb.gui = false
   #
   #   # Customize the amount of memory on the VM:
-  #   vb.memory = "1024"
-  # end
+     vb.memory = "4096"
+  end
   #
   # View the documentation for the provider you are using for more
   # information on available options.
