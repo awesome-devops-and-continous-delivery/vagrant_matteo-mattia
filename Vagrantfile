@@ -45,7 +45,7 @@ Vagrant.configure("2") do |config|
   # argument is a set of non-required options.
   config.vm.synced_folder ".", "/usr/share/nginx/html"
 
-  config.vm.provision "shell", inline: "sudo apt-get update; apt install -yq ngnix"
+  config.vm.provision "shell", inline: "sudo apt-get update; sudo apt install nginx"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
